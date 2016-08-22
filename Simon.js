@@ -3,8 +3,18 @@ var counter = 0;
 var choices = "";
 var strict = true;
 
+var sounds = {
+  "red": new Audio("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3"),
+  "green": new Audio("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3"),
+  "blue": new Audio("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3"),
+  "yellow": new Audio("https://s3.amazonaws.com/freecodecamp/simonSound4.mp3")
+};
+
+
+
 function pattern(){
 	$("#start").click(function(){
+
 	var rand = Math.floor(Math.random() * 4);
 	
 	if (rand === 0){
@@ -27,15 +37,15 @@ function pattern(){
 		counter = 0;
 		simon = [];
 	}
-	simon.forEach(flashes(simon));
+	
 	});//end of click function
 }
 
 function flashes(elem){
+	for (var i = 0; i < elem.length; i++){
+		
+	}
 
-	$(elem).each(function (index){
-		$("#" + elem).delay(800 * index).addClass(elem + "flash");
-	});
 
 }
 
