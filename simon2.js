@@ -38,6 +38,13 @@ function startit(){
 	});
 }
 
+function flashes(){
+	for (var j = 0; j < simon.length; j++){
+		
+	}
+}
+
+
 function checkCorrect(){
 	for (var k = 0; k < player.length; ){
 		if (simon[k] == player[k]){
