@@ -1,52 +1,73 @@
 var simon = [];
-var counter = 1;
+var counter = 0;
 var choices = "";
-
+var strict = true;
 
 function pattern(){
-	$(".btn").click(function(){
+	$("#start").click(function(){
 	var rand = Math.floor(Math.random() * 4);
-	console.log(rand);
+	
 	if (rand === 0){
-		simon.push("red")		
+		simon.push("red");		
 	}
 	else if (rand === 1){
-		simon.push("green")
+		simon.push("green");
 	}
 	else if (rand === 2){
-		simon.push("blue")
+		simon.push("blue");
 	}
 	else if (rand === 3){
-		simon.push("yellow")
-	}
-});
-	for (var i = 0; i < simon.length; i++){
-		simon.forEach(flash(simon[i]));
+		simon.push("yellow");
 		}
-	
+	counter++;
+	$(".patterncount").html("# of flashes: " + counter);
+	console.log(simon);
+	if (simon.length === 20){
+		alert("Game Over");
+		counter = 0;
+		simon = [];
+	}
+	simon.forEach(flashes(simon));
+	});//end of click function
 }
 
-function flash(elem){
-	$("#" + elem).addClass(elem + "flash");
+function flashes(elem){
+
+	$(elem).each(function (index){
+		$("#" + elem).delay(800 * index).addClass(elem + "flash");
+	});
+
 }
 
 
 
 function startHover(){
-	$(".btn").mouseover(function(){
+	$("#start").mouseover(function(){
 		$(this).removeClass("btn-warning");
 		$(this).addClass("btn-danger");
 	})
-	$(".btn").mouseout(function(){
+	$("#start").mouseout(function(){
 		$(this).removeClass("btn-danger");
 		$(this).addClass("btn-warning");
+	})
+	$("#restart").click(function(){
+		location.reload();
+	})
+	$("#strict").click(function(){
+		strict = !strict;
+
+		$(this).text(function(i, text){
+			console.log(strict);
+			
+			return text === "Strict Mode: On" ? "Strict Mode: Off" : "Strict Mode: On";
+		})
+
 	})
 }
 
 
 $(document).ready(function(){
-	startHover();
+	startHover();	
 	pattern();
-	$(".patterncount").html("# of flashes: " + counter);
 
 })

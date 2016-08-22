@@ -58,8 +58,7 @@ body{
 .btn{
 	text-align: center;
 	margin-top: 30px;
-	width: 150px;
-	height: 60px;
-	font-size: 36px;
+
+	font-size: 20px;
 	color: #000;
 }
