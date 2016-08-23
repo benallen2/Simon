@@ -16,43 +16,21 @@ body{
 }
 
 #red{
-	background-color: #F78888;
-}
-#red:hover{
 	background-color: #E30000;
-}
-.redflash{
-	background-color: #E30000 !important;
 }
 
 #green{
-	background-color: #7ED97F;
-}
-#green:hover{
 	background-color: #00C702;
 }
-.greenflash{
-	background-color: #00C702 !important;
-}
+
 
 #blue {
-	background-color: #AAE6FA;
-}
-#blue:hover{
 	background-color: #00BFFF;
 }
-.blueflash{
-	background-color: #00BFFF !important;
-}
+
 
 #yellow{
-	background-color: #DED883;
-}
-#yellow:hover{
 	background-color: #FFEE00;
-}
-.yellowflash{
-	background-color: #FFEE00 !important;
 }
 
 .btn{
